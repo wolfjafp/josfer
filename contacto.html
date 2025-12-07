@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Josfer Agencia Digital</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">josfer<span class="text-gradient">.</span></a>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-list" id="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="portafolio.html" class="nav-link">Resultados</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link active btn btn-primary"
+                        style="color: white; padding: 10px 24px;">Agendar Consultoría</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero text-center" style="padding-bottom: 60px;">
+            <div class="container">
+                <h1 class="hero-title">Inicia tu <span class="text-gradient">Transformación</span></h1>
+                <p class="hero-description" style="margin: 0 auto;">
+                    Agenda una llamada estratégica gratuita de 15 minutos para analizar tu negocio.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Hablemos de tu Proyecto</h3>
+                        <p>Escríbeme directamente. Sin intermediarios, sin esperas.</p>
+
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp Directo</strong>
+                                <p>+51 918 647 921</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>contacto@josfer.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="whatsappForm">
+                        <div class="form-group">
+                            <label>Tu Nombre</label>
+                            <input type="text" id="name" required placeholder="Ej. Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label>Tu Negocio</label>
+                            <input type="text" id="business" required placeholder="Ej. Restaurante El Sabor">
+                        </div>
+                        <div class="form-group">
+                            <label>¿Qué necesitas?</label>
+                            <select id="service">
+                                <option value="Pack Web 48h">Pack Web 48h</option>
+                                <option value="Google Maps">Google Maps</option>
+                                <option value="SEO">SEO / Posicionamiento</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">
+                            Enviar Mensaje por WhatsApp <i class="fab fa-whatsapp"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 Josfer. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const business = document.getElementById('business').value;
+            const service = document.getElementById('service').value;
+
+            const message = `Hola Josfer, soy ${name}. Tengo un negocio llamado "${business}" y me interesa: ${service}.`;
+            const url = `https://wa.me/51918647921?text=${encodeURIComponent(message)}`;
+
+            window.open(url, '_blank');
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
